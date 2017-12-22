@@ -26,6 +26,12 @@ type Protocol struct {
 	InvertedSignal bool
 }
 
+// Switch defines the methods for interacting with a 433MHz switch
+type Switch interface {
+	Scan()
+	Send(data string, protocolID int)
+}
+
 // RCSwitch is a structure for interacting with 433MHz remote switches
 type RCSwitch struct {
 	pin gpio.PinIO
