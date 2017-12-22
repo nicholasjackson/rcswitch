@@ -26,6 +26,8 @@ type Protocol struct {
 	InvertedSignal bool
 }
 
+//go:generate moq -out switch_moq.go . Switch
+
 // Switch defines the methods for interacting with a 433MHz switch
 type Switch interface {
 	Scan()
