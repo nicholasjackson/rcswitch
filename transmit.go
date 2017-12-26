@@ -17,6 +17,7 @@ func (s *RCSwitch) Send(data string, protocolID int) {
 	log.Printf("Transmitting: %s", data)
 	for i := 0; i < 10; i++ {
 		s.transmit(data, p)
+		time.Sleep(100 * time.Millisecond)
 	}
 }
 
